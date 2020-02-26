@@ -1,0 +1,17 @@
+FROM node:alpine
+
+WORKDIR /app
+
+COPY ./package.json ./
+
+RUN npm install
+
+COPY ./ ./
+
+ CMD ["npm","run","start"]
+
+ #docker build -f Dockerfile.dev .
+
+# e.g
+# docker run -p 3000:3000 -v /app/node_modules -v $(pwd):/app 379121ce5859
+#docker run -it efe606494f02 npm run test
