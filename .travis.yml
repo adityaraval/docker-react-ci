@@ -6,4 +6,4 @@ before_install:
     - docker build -t adityaraval/docker-react-ci -f Dockerfile.dev .
 
 script:
-    - docker run adityaraval/docker-react-ci npm run test -- --coverage
+    - docker run -e CI=true adityaraval/docker-react-ci npm run test
